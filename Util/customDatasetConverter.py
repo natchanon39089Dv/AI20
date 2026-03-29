@@ -4,7 +4,9 @@ from PIL import Image
 from torch.utils.data import Dataset
 from torchvision import transforms
 
-ROOT = "Data/cifar-10Process/cifar-10"
+# หา root ของโปรเจกต์จากตำแหน่งไฟล์นี้
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.join(BASE_DIR, "Data", "cifar-10Process", "cifar-10")
 
 
 def find_image_file(folder, image_id):
@@ -21,6 +23,7 @@ def check_data():
     test_dir = os.path.join(ROOT, "test", "test")
 
     print("Checking dataset...")
+    print("ROOT :", ROOT)
     print("CSV  :", csv_path)
     print("Train:", train_dir)
     print("Test :", test_dir)
@@ -125,7 +128,6 @@ class TestDataset(Dataset):
 
 def get_transform():
     return transforms.Compose([
-        transforms.Resize((32, 32)),
         transforms.ToTensor()
     ])
 
