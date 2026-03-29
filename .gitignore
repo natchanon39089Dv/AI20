@@ -1,0 +1,6 @@
+# ignore dataset
+Data/cifar-10Process/*
+!Data/cifar-10Process/.gitkeep
+
+# ignore zip
+*.zip
