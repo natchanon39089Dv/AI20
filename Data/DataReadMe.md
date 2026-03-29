@@ -1,0 +1,1 @@
+this sector is provide fo a data to train and test the model.Consider as CSV or xlsx
